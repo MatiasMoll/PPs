@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title style="float: left; margin:2%; width:33%;">Fotos {{flag}}</ion-title>
+        <ion-icon class="camera" name="camera-outline" (click)="tomarFoto()"></ion-icon>
+        <ion-button style="float: right; width:33%;" color="primary" (click)="volverHome()">Volver al Home</ion-button>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let foto of listadoFotos">
+        <img src="{{foto.urlFoto}}" />
+        <ion-card-content>
+            Autor: {{foto.autor}} Votos: {{foto.votos}}
+            <ion-button color="success" (click)="sumarVoto(foto)">Votar</ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
